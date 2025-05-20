@@ -94,7 +94,7 @@ const clients = [
     role: "Crime",
     platform: "youtube",
     youtube: "@JakeTheOfficer",
-    image: "/images/officer.jpg"
+    image: "/images/officer.jpg",
   },
   {
     name: "Farah Hawa",
@@ -276,7 +276,7 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-gray-800 rounded-xl p-8 md:p-10 shadow-lg">
+                  <div className="bg-gray-800 rounded-xl p-8 md:p-10 shadow-lg hover:shadow-xl hover:shadow-purple-900/30 transition-shadow duration-300">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                       <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
                         <Image
@@ -295,9 +295,7 @@ export default function Testimonials() {
                         <p className="text-gray-300 text-lg italic mb-6">"{testimonial.quote}"</p>
                         <div>
                           <h4 className="text-xl font-bold">{testimonial.name}</h4>
-                          <p className="text-purple-400">
-                            {testimonial.role}
-                          </p>
+                          <p className="text-purple-400">{testimonial.role}</p>
                           <a
                             href={`https://instagram.com/${testimonial.instagram.substring(1)}`}
                             target="_blank"
@@ -400,8 +398,8 @@ export default function Testimonials() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -10 }}
-                    className="bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center"
+                    whileHover={{ y: -10, boxShadow: "0 10px 25px -5px rgba(124, 58, 237, 0.5)" }}
+                    className="bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center transition-shadow"
                   >
                     <div className="relative w-20 h-20 rounded-full overflow-hidden mb-4">
                       <Image src={client.image || "/placeholder.svg"} alt={client.name} fill className="object-cover" />
